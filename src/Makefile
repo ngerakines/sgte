@@ -1,14 +1,9 @@
-
-include ../conf/include.mk
-
-EBIN_FILES = ../ebin/sgte.beam \
-		../ebin/sgte_render.beam \
-		../ebin/sgte_parse.beam \
-		../ebin/sgte_gettext.beam \
-		../ebin/sgte_dict.beam
-
+include ../support/include.mk
 
 all: $(EBIN_FILES)
 
+debug:
+	$(MAKE) DEBUG=-DDEBUG
+
 clean:
-	rm -f ../ebin/*.beam
+	rm -rf $(EBIN_FILES) erl_crash.dump
