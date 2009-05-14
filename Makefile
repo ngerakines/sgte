@@ -10,7 +10,7 @@ clean:
 	rm -rf erl_crash.dump *.beam *.hrl
 
 package: clean
-	@mkdir sgte-$(VERSION)/ && cp -rf _build.cfg CHANGELOG ebin conf doc Makefile sgte.pub src test sgte-$(VERSION)
+	@mkdir sgte-$(VERSION)/ && cp -rf CHANGELOG ebin support Makefile src sgte-$(VERSION)
 	@COPYFILE_DISABLE=true tar zcf sgte-$(VERSION).tgz sgte-$(VERSION)
 	@rm -rf sgte-$(VERSION)/
 
